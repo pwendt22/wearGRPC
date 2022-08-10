@@ -12,7 +12,7 @@ package wearGRPC;
 
 service Service2 {
 
-  //Runing mode
+  //Running mode
   //RPC Bidirectional
   rpc running(runData) returns (stream runAnalysis) {}
 
@@ -21,7 +21,7 @@ service Service2 {
 
 }
 
-//Runing mode
+//Running mode
 
 message runData {
   string runMode = 1;
