@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "watchHealth";
+option java_outer_classname = "Service1Impl";
+
+package wearGRPC;
+
+// Interface exported by the server.
+
+// Smart Watch for Health service definition
+service Service1 {
+
+  //server stream
+  rpc sedentaryReminder(SendAlert) returns (StatusSedentary) {}
+
+  //Heart Rate RPC Client Stream
+  rpc heartRate(stream heartBeat) returns (avgHeartRate) {}
+
+}
+//When the user stays a long time without moving the system send an alert message
+message SendAlert {
+  string noMoviment = 1;
+}
+
+//
+message StatusSedentary {
+  string SedentaryAlert = 1;
+}
+
+
+//Heart Rate RPC Client Stream
+message heartBeat {
+  int32 heartBeat = 1;
+}
+
+//
+message avgHeartRate {
+  int32 avgHeartRate = 1;
+}
