@@ -4,23 +4,18 @@
 package watchHealth;
 
 /**
- * <pre>
- *When the user stays a long time without moving the system send an alert message
- * </pre>
- *
- * Protobuf type {@code wearGRPC.SendAlert}
+ * Protobuf type {@code wearGRPC.stepRequest}
  */
-public  final class SendAlert extends
+public  final class stepRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:wearGRPC.SendAlert)
-    SendAlertOrBuilder {
+    // @@protoc_insertion_point(message_implements:wearGRPC.stepRequest)
+    stepRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SendAlert.newBuilder() to construct.
-  private SendAlert(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use stepRequest.newBuilder() to construct.
+  private stepRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SendAlert() {
-    noMoviment_ = "";
+  private stepRequest() {
   }
 
   @java.lang.Override
@@ -28,7 +23,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SendAlert(
+  private stepRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -48,9 +43,16 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            watchHealth.stepStatus.Builder subBuilder = null;
+            if (stepStatus_ != null) {
+              subBuilder = stepStatus_.toBuilder();
+            }
+            stepStatus_ = input.readMessage(watchHealth.stepStatus.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(stepStatus_);
+              stepStatus_ = subBuilder.buildPartial();
+            }
 
-            noMoviment_ = s;
             break;
           }
           default: {
@@ -74,49 +76,36 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return watchHealth.Service1Impl.internal_static_wearGRPC_SendAlert_descriptor;
+    return watchHealth.Service1Impl.internal_static_wearGRPC_stepRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return watchHealth.Service1Impl.internal_static_wearGRPC_SendAlert_fieldAccessorTable
+    return watchHealth.Service1Impl.internal_static_wearGRPC_stepRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            watchHealth.SendAlert.class, watchHealth.SendAlert.Builder.class);
+            watchHealth.stepRequest.class, watchHealth.stepRequest.Builder.class);
   }
 
-  public static final int NOMOVIMENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object noMoviment_;
+  public static final int STEPSTATUS_FIELD_NUMBER = 1;
+  private watchHealth.stepStatus stepStatus_;
   /**
-   * <code>string noMoviment = 1;</code>
+   * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
    */
-  public java.lang.String getNoMoviment() {
-    java.lang.Object ref = noMoviment_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      noMoviment_ = s;
-      return s;
-    }
+  public boolean hasStepStatus() {
+    return stepStatus_ != null;
   }
   /**
-   * <code>string noMoviment = 1;</code>
+   * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNoMovimentBytes() {
-    java.lang.Object ref = noMoviment_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      noMoviment_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public watchHealth.stepStatus getStepStatus() {
+    return stepStatus_ == null ? watchHealth.stepStatus.getDefaultInstance() : stepStatus_;
+  }
+  /**
+   * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
+   */
+  public watchHealth.stepStatusOrBuilder getStepStatusOrBuilder() {
+    return getStepStatus();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,8 +122,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNoMovimentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, noMoviment_);
+    if (stepStatus_ != null) {
+      output.writeMessage(1, getStepStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -145,8 +134,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNoMovimentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, noMoviment_);
+    if (stepStatus_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getStepStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -158,14 +148,17 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof watchHealth.SendAlert)) {
+    if (!(obj instanceof watchHealth.stepRequest)) {
       return super.equals(obj);
     }
-    watchHealth.SendAlert other = (watchHealth.SendAlert) obj;
+    watchHealth.stepRequest other = (watchHealth.stepRequest) obj;
 
     boolean result = true;
-    result = result && getNoMoviment()
-        .equals(other.getNoMoviment());
+    result = result && (hasStepStatus() == other.hasStepStatus());
+    if (hasStepStatus()) {
+      result = result && getStepStatus()
+          .equals(other.getStepStatus());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -177,76 +170,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NOMOVIMENT_FIELD_NUMBER;
-    hash = (53 * hash) + getNoMoviment().hashCode();
+    if (hasStepStatus()) {
+      hash = (37 * hash) + STEPSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStepStatus().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static watchHealth.SendAlert parseFrom(
+  public static watchHealth.stepRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static watchHealth.SendAlert parseFrom(
+  public static watchHealth.stepRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static watchHealth.SendAlert parseFrom(
+  public static watchHealth.stepRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static watchHealth.SendAlert parseFrom(
+  public static watchHealth.stepRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static watchHealth.SendAlert parseFrom(byte[] data)
+  public static watchHealth.stepRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static watchHealth.SendAlert parseFrom(
+  public static watchHealth.stepRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static watchHealth.SendAlert parseFrom(java.io.InputStream input)
+  public static watchHealth.stepRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static watchHealth.SendAlert parseFrom(
+  public static watchHealth.stepRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static watchHealth.SendAlert parseDelimitedFrom(java.io.InputStream input)
+  public static watchHealth.stepRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static watchHealth.SendAlert parseDelimitedFrom(
+  public static watchHealth.stepRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static watchHealth.SendAlert parseFrom(
+  public static watchHealth.stepRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static watchHealth.SendAlert parseFrom(
+  public static watchHealth.stepRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -259,7 +254,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(watchHealth.SendAlert prototype) {
+  public static Builder newBuilder(watchHealth.stepRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -275,30 +270,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   *When the user stays a long time without moving the system send an alert message
-   * </pre>
-   *
-   * Protobuf type {@code wearGRPC.SendAlert}
+   * Protobuf type {@code wearGRPC.stepRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:wearGRPC.SendAlert)
-      watchHealth.SendAlertOrBuilder {
+      // @@protoc_insertion_point(builder_implements:wearGRPC.stepRequest)
+      watchHealth.stepRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_SendAlert_descriptor;
+      return watchHealth.Service1Impl.internal_static_wearGRPC_stepRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_SendAlert_fieldAccessorTable
+      return watchHealth.Service1Impl.internal_static_wearGRPC_stepRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              watchHealth.SendAlert.class, watchHealth.SendAlert.Builder.class);
+              watchHealth.stepRequest.class, watchHealth.stepRequest.Builder.class);
     }
 
-    // Construct using watchHealth.SendAlert.newBuilder()
+    // Construct using watchHealth.stepRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -316,25 +307,29 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      noMoviment_ = "";
-
+      if (stepStatusBuilder_ == null) {
+        stepStatus_ = null;
+      } else {
+        stepStatus_ = null;
+        stepStatusBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_SendAlert_descriptor;
+      return watchHealth.Service1Impl.internal_static_wearGRPC_stepRequest_descriptor;
     }
 
     @java.lang.Override
-    public watchHealth.SendAlert getDefaultInstanceForType() {
-      return watchHealth.SendAlert.getDefaultInstance();
+    public watchHealth.stepRequest getDefaultInstanceForType() {
+      return watchHealth.stepRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public watchHealth.SendAlert build() {
-      watchHealth.SendAlert result = buildPartial();
+    public watchHealth.stepRequest build() {
+      watchHealth.stepRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -342,9 +337,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public watchHealth.SendAlert buildPartial() {
-      watchHealth.SendAlert result = new watchHealth.SendAlert(this);
-      result.noMoviment_ = noMoviment_;
+    public watchHealth.stepRequest buildPartial() {
+      watchHealth.stepRequest result = new watchHealth.stepRequest(this);
+      if (stepStatusBuilder_ == null) {
+        result.stepStatus_ = stepStatus_;
+      } else {
+        result.stepStatus_ = stepStatusBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -383,19 +382,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof watchHealth.SendAlert) {
-        return mergeFrom((watchHealth.SendAlert)other);
+      if (other instanceof watchHealth.stepRequest) {
+        return mergeFrom((watchHealth.stepRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(watchHealth.SendAlert other) {
-      if (other == watchHealth.SendAlert.getDefaultInstance()) return this;
-      if (!other.getNoMoviment().isEmpty()) {
-        noMoviment_ = other.noMoviment_;
-        onChanged();
+    public Builder mergeFrom(watchHealth.stepRequest other) {
+      if (other == watchHealth.stepRequest.getDefaultInstance()) return this;
+      if (other.hasStepStatus()) {
+        mergeStepStatus(other.getStepStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -412,11 +410,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      watchHealth.SendAlert parsedMessage = null;
+      watchHealth.stepRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (watchHealth.SendAlert) e.getUnfinishedMessage();
+        parsedMessage = (watchHealth.stepRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -426,73 +424,121 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object noMoviment_ = "";
+    private watchHealth.stepStatus stepStatus_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        watchHealth.stepStatus, watchHealth.stepStatus.Builder, watchHealth.stepStatusOrBuilder> stepStatusBuilder_;
     /**
-     * <code>string noMoviment = 1;</code>
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
      */
-    public java.lang.String getNoMoviment() {
-      java.lang.Object ref = noMoviment_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        noMoviment_ = s;
-        return s;
+    public boolean hasStepStatus() {
+      return stepStatusBuilder_ != null || stepStatus_ != null;
+    }
+    /**
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
+     */
+    public watchHealth.stepStatus getStepStatus() {
+      if (stepStatusBuilder_ == null) {
+        return stepStatus_ == null ? watchHealth.stepStatus.getDefaultInstance() : stepStatus_;
       } else {
-        return (java.lang.String) ref;
+        return stepStatusBuilder_.getMessage();
       }
     }
     /**
-     * <code>string noMoviment = 1;</code>
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNoMovimentBytes() {
-      java.lang.Object ref = noMoviment_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        noMoviment_ = b;
-        return b;
+    public Builder setStepStatus(watchHealth.stepStatus value) {
+      if (stepStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepStatus_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        stepStatusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
+     */
+    public Builder setStepStatus(
+        watchHealth.stepStatus.Builder builderForValue) {
+      if (stepStatusBuilder_ == null) {
+        stepStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        stepStatusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
+     */
+    public Builder mergeStepStatus(watchHealth.stepStatus value) {
+      if (stepStatusBuilder_ == null) {
+        if (stepStatus_ != null) {
+          stepStatus_ =
+            watchHealth.stepStatus.newBuilder(stepStatus_).mergeFrom(value).buildPartial();
+        } else {
+          stepStatus_ = value;
+        }
+        onChanged();
+      } else {
+        stepStatusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
+     */
+    public Builder clearStepStatus() {
+      if (stepStatusBuilder_ == null) {
+        stepStatus_ = null;
+        onChanged();
+      } else {
+        stepStatus_ = null;
+        stepStatusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
+     */
+    public watchHealth.stepStatus.Builder getStepStatusBuilder() {
+      
+      onChanged();
+      return getStepStatusFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
+     */
+    public watchHealth.stepStatusOrBuilder getStepStatusOrBuilder() {
+      if (stepStatusBuilder_ != null) {
+        return stepStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return stepStatus_ == null ?
+            watchHealth.stepStatus.getDefaultInstance() : stepStatus_;
       }
     }
     /**
-     * <code>string noMoviment = 1;</code>
+     * <code>.wearGRPC.stepStatus stepStatus = 1;</code>
      */
-    public Builder setNoMoviment(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      noMoviment_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string noMoviment = 1;</code>
-     */
-    public Builder clearNoMoviment() {
-      
-      noMoviment_ = getDefaultInstance().getNoMoviment();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string noMoviment = 1;</code>
-     */
-    public Builder setNoMovimentBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      noMoviment_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        watchHealth.stepStatus, watchHealth.stepStatus.Builder, watchHealth.stepStatusOrBuilder> 
+        getStepStatusFieldBuilder() {
+      if (stepStatusBuilder_ == null) {
+        stepStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            watchHealth.stepStatus, watchHealth.stepStatus.Builder, watchHealth.stepStatusOrBuilder>(
+                getStepStatus(),
+                getParentForChildren(),
+                isClean());
+        stepStatus_ = null;
+      }
+      return stepStatusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -507,41 +553,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:wearGRPC.SendAlert)
+    // @@protoc_insertion_point(builder_scope:wearGRPC.stepRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:wearGRPC.SendAlert)
-  private static final watchHealth.SendAlert DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:wearGRPC.stepRequest)
+  private static final watchHealth.stepRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new watchHealth.SendAlert();
+    DEFAULT_INSTANCE = new watchHealth.stepRequest();
   }
 
-  public static watchHealth.SendAlert getDefaultInstance() {
+  public static watchHealth.stepRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SendAlert>
-      PARSER = new com.google.protobuf.AbstractParser<SendAlert>() {
+  private static final com.google.protobuf.Parser<stepRequest>
+      PARSER = new com.google.protobuf.AbstractParser<stepRequest>() {
     @java.lang.Override
-    public SendAlert parsePartialFrom(
+    public stepRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SendAlert(input, extensionRegistry);
+      return new stepRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SendAlert> parser() {
+  public static com.google.protobuf.Parser<stepRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SendAlert> getParserForType() {
+  public com.google.protobuf.Parser<stepRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public watchHealth.SendAlert getDefaultInstanceForType() {
+  public watchHealth.stepRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

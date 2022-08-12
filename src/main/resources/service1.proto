@@ -11,16 +11,27 @@ package wearGRPC;
 // Smart Watch for Health service definition
 service Service1 {
 
-  //server stream
-  rpc sedentaryReminder(SendAlert) returns (StatusSedentary) {}
+  //server stream - counting the steps
+  rpc stepQty(stepRequest) returns (stream stepResponse) {}
 
   //Heart Rate RPC Client Stream
   rpc heartRate(stream heartBeat) returns (avgHeartRate) {}
 
 }
 //When the user stays a long time without moving the system send an alert message
-message SendAlert {
-  string noMoviment = 1;
+message stepStatus{
+  bool actived = 1;
+  int32 count=2;
+}
+
+message stepResponse{
+  string result = 1;
+  double avgSpeed = 2;
+  int32 currentC =3;
+}
+
+message stepRequest{
+  stepStatus stepStatus = 1;
 }
 
 //

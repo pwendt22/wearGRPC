@@ -120,7 +120,7 @@ public final class Service2Grpc {
 
     /**
      * <pre>
-     *Runing mode
+     *Running mode
      *RPC Bidirectional
      * </pre>
      */
@@ -179,7 +179,7 @@ public final class Service2Grpc {
 
     /**
      * <pre>
-     *Runing mode
+     *Running mode
      *RPC Bidirectional
      * </pre>
      */
@@ -221,7 +221,7 @@ public final class Service2Grpc {
 
     /**
      * <pre>
-     *Runing mode
+     *Running mode
      *RPC Bidirectional
      * </pre>
      */
