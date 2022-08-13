@@ -15,25 +15,25 @@ public final class Service1Impl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ds_service1_MovimentRequest_descriptor;
+    internal_static_wearGRPC_MovimentRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ds_service1_MovimentRequest_fieldAccessorTable;
+      internal_static_wearGRPC_MovimentRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ds_service1_StatusSedentary_descriptor;
+    internal_static_wearGRPC_StatusSedentary_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ds_service1_StatusSedentary_fieldAccessorTable;
+      internal_static_wearGRPC_StatusSedentary_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ds_service1_heartBeat_descriptor;
+    internal_static_wearGRPC_heartBeat_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ds_service1_heartBeat_fieldAccessorTable;
+      internal_static_wearGRPC_heartBeat_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ds_service1_avgHeartRate_descriptor;
+    internal_static_wearGRPC_avgHeartRate_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ds_service1_avgHeartRate_fieldAccessorTable;
+      internal_static_wearGRPC_avgHeartRate_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43,16 +43,15 @@ public final class Service1Impl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016service1.proto\022\013ds.service1\"\021\n\017Movimen" +
-      "tRequest\"*\n\017StatusSedentary\022\027\n\017messagSed" +
-      "entary\030\001 \001(\t\"\036\n\theartBeat\022\021\n\theartBeat\030\001" +
-      " \001(\005\"$\n\014avgHeartRate\022\024\n\014avgHeartRate\030\001 \001" +
-      "(\0052\241\001\n\010Service1\022Q\n\021sedentaryReminder\022\034.d" +
-      "s.service1.MovimentRequest\032\034.ds.service1" +
-      ".StatusSedentary\"\000\022B\n\theartRate\022\026.ds.ser" +
-      "vice1.heartBeat\032\031.ds.service1.avgHeartRa" +
-      "te\"\000(\001B\035\n\013watchHealthB\014Service1ImplP\001b\006p" +
-      "roto3"
+      "\n\016service1.proto\022\010wearGRPC\"\021\n\017MovimentRe" +
+      "quest\"*\n\017StatusSedentary\022\027\n\017messagSedent" +
+      "ary\030\001 \001(\t\"\036\n\theartBeat\022\021\n\theartBeat\030\001 \001(" +
+      "\005\"$\n\014avgHeartRate\022\024\n\014avgHeartRate\030\001 \001(\0052" +
+      "\225\001\n\010Service1\022K\n\021sedentaryReminder\022\031.wear" +
+      "GRPC.MovimentRequest\032\031.wearGRPC.StatusSe" +
+      "dentary\"\000\022<\n\theartRate\022\023.wearGRPC.heartB" +
+      "eat\032\026.wearGRPC.avgHeartRate\"\000(\001B\035\n\013watch" +
+      "HealthB\014Service1ImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -66,29 +65,29 @@ public final class Service1Impl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_ds_service1_MovimentRequest_descriptor =
+    internal_static_wearGRPC_MovimentRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_ds_service1_MovimentRequest_fieldAccessorTable = new
+    internal_static_wearGRPC_MovimentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ds_service1_MovimentRequest_descriptor,
+        internal_static_wearGRPC_MovimentRequest_descriptor,
         new java.lang.String[] { });
-    internal_static_ds_service1_StatusSedentary_descriptor =
+    internal_static_wearGRPC_StatusSedentary_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_ds_service1_StatusSedentary_fieldAccessorTable = new
+    internal_static_wearGRPC_StatusSedentary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ds_service1_StatusSedentary_descriptor,
+        internal_static_wearGRPC_StatusSedentary_descriptor,
         new java.lang.String[] { "MessagSedentary", });
-    internal_static_ds_service1_heartBeat_descriptor =
+    internal_static_wearGRPC_heartBeat_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_ds_service1_heartBeat_fieldAccessorTable = new
+    internal_static_wearGRPC_heartBeat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ds_service1_heartBeat_descriptor,
+        internal_static_wearGRPC_heartBeat_descriptor,
         new java.lang.String[] { "HeartBeat", });
-    internal_static_ds_service1_avgHeartRate_descriptor =
+    internal_static_wearGRPC_avgHeartRate_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_ds_service1_avgHeartRate_fieldAccessorTable = new
+    internal_static_wearGRPC_avgHeartRate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ds_service1_avgHeartRate_descriptor,
+        internal_static_wearGRPC_avgHeartRate_descriptor,
         new java.lang.String[] { "AvgHeartRate", });
   }
 

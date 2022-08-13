@@ -4,7 +4,7 @@
 package watchHealth;
 
 public interface StatusSedentaryOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:ds.service1.StatusSedentary)
+    // @@protoc_insertion_point(interface_extends:wearGRPC.StatusSedentary)
     com.google.protobuf.MessageOrBuilder {
 
   /**

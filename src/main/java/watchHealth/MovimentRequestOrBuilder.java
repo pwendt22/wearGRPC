@@ -4,6 +4,6 @@
 package watchHealth;
 
 public interface MovimentRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:ds.service1.MovimentRequest)
+    // @@protoc_insertion_point(interface_extends:wearGRPC.MovimentRequest)
     com.google.protobuf.MessageOrBuilder {
 }

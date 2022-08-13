@@ -27,7 +27,7 @@ public final class Service1Grpc {
 
   private Service1Grpc() {}
 
-  public static final String SERVICE_NAME = "ds.service1.Service1";
+  public static final String SERVICE_NAME = "wearGRPC.Service1";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<watchHealth.MovimentRequest,
@@ -48,7 +48,7 @@ public final class Service1Grpc {
               io.grpc.MethodDescriptor.<watchHealth.MovimentRequest, watchHealth.StatusSedentary>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "ds.service1.Service1", "sedentaryReminder"))
+                  "wearGRPC.Service1", "sedentaryReminder"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   watchHealth.MovimentRequest.getDefaultInstance()))
@@ -80,7 +80,7 @@ public final class Service1Grpc {
               io.grpc.MethodDescriptor.<watchHealth.heartBeat, watchHealth.avgHeartRate>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "ds.service1.Service1", "heartRate"))
+                  "wearGRPC.Service1", "heartRate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   watchHealth.heartBeat.getDefaultInstance()))

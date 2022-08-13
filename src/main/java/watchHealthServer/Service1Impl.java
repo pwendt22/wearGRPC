@@ -31,7 +31,7 @@ public class Service1Impl extends Service1ImplBase {
 	private static String generateReplyMessage() {
 		String message = "";
 		
-		// Simulate minutes without moviment (max is 24 hours = 60*24)
+		// Simulate minutes without movement (max is 24 hours = 60*24)
 		Random rand = new Random();
 		int minutes = rand.nextInt(1440);				  
 		
@@ -42,7 +42,7 @@ public class Service1Impl extends Service1ImplBase {
 			message = "Sleeping Mode: Sensors disabled!";
 		} else {		   
 			if (minutes > 60) {
-				message = "Sedentary Alert! Need to move...";
+				message = "Sedentary Alert! Time to get up and move.";
 			} else {
 				message = "Status OK: "+minutes+" minutes without moviment";
 			}

@@ -4,7 +4,7 @@
 package watchHealth;
 
 public interface avgHeartRateOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:ds.service1.avgHeartRate)
+    // @@protoc_insertion_point(interface_extends:wearGRPC.avgHeartRate)
     com.google.protobuf.MessageOrBuilder {
 
   /**

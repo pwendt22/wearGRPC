@@ -7,11 +7,11 @@ package watchHealth;
  * <pre>
  * </pre>
  *
- * Protobuf type {@code ds.service1.avgHeartRate}
+ * Protobuf type {@code wearGRPC.avgHeartRate}
  */
 public  final class avgHeartRate extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ds.service1.avgHeartRate)
+    // @@protoc_insertion_point(message_implements:wearGRPC.avgHeartRate)
     avgHeartRateOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use avgHeartRate.newBuilder() to construct.
@@ -72,13 +72,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return watchHealth.Service1Impl.internal_static_ds_service1_avgHeartRate_descriptor;
+    return watchHealth.Service1Impl.internal_static_wearGRPC_avgHeartRate_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return watchHealth.Service1Impl.internal_static_ds_service1_avgHeartRate_fieldAccessorTable
+    return watchHealth.Service1Impl.internal_static_wearGRPC_avgHeartRate_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             watchHealth.avgHeartRate.class, watchHealth.avgHeartRate.Builder.class);
   }
@@ -252,21 +252,21 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * </pre>
    *
-   * Protobuf type {@code ds.service1.avgHeartRate}
+   * Protobuf type {@code wearGRPC.avgHeartRate}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ds.service1.avgHeartRate)
+      // @@protoc_insertion_point(builder_implements:wearGRPC.avgHeartRate)
       watchHealth.avgHeartRateOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_avgHeartRate_descriptor;
+      return watchHealth.Service1Impl.internal_static_wearGRPC_avgHeartRate_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_avgHeartRate_fieldAccessorTable
+      return watchHealth.Service1Impl.internal_static_wearGRPC_avgHeartRate_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               watchHealth.avgHeartRate.class, watchHealth.avgHeartRate.Builder.class);
     }
@@ -297,7 +297,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_avgHeartRate_descriptor;
+      return watchHealth.Service1Impl.internal_static_wearGRPC_avgHeartRate_descriptor;
     }
 
     @java.lang.Override
@@ -436,10 +436,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ds.service1.avgHeartRate)
+    // @@protoc_insertion_point(builder_scope:wearGRPC.avgHeartRate)
   }
 
-  // @@protoc_insertion_point(class_scope:ds.service1.avgHeartRate)
+  // @@protoc_insertion_point(class_scope:wearGRPC.avgHeartRate)
   private static final watchHealth.avgHeartRate DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new watchHealth.avgHeartRate();

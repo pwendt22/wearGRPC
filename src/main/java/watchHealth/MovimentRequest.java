@@ -8,11 +8,11 @@ package watchHealth;
  *When the user stays a long time without moving the system send an alert message
  * </pre>
  *
- * Protobuf type {@code ds.service1.MovimentRequest}
+ * Protobuf type {@code wearGRPC.MovimentRequest}
  */
 public  final class MovimentRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ds.service1.MovimentRequest)
+    // @@protoc_insertion_point(message_implements:wearGRPC.MovimentRequest)
     MovimentRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use MovimentRequest.newBuilder() to construct.
@@ -66,13 +66,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return watchHealth.Service1Impl.internal_static_ds_service1_MovimentRequest_descriptor;
+    return watchHealth.Service1Impl.internal_static_wearGRPC_MovimentRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return watchHealth.Service1Impl.internal_static_ds_service1_MovimentRequest_fieldAccessorTable
+    return watchHealth.Service1Impl.internal_static_wearGRPC_MovimentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             watchHealth.MovimentRequest.class, watchHealth.MovimentRequest.Builder.class);
   }
@@ -227,21 +227,21 @@ private static final long serialVersionUID = 0L;
    *When the user stays a long time without moving the system send an alert message
    * </pre>
    *
-   * Protobuf type {@code ds.service1.MovimentRequest}
+   * Protobuf type {@code wearGRPC.MovimentRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ds.service1.MovimentRequest)
+      // @@protoc_insertion_point(builder_implements:wearGRPC.MovimentRequest)
       watchHealth.MovimentRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_MovimentRequest_descriptor;
+      return watchHealth.Service1Impl.internal_static_wearGRPC_MovimentRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_MovimentRequest_fieldAccessorTable
+      return watchHealth.Service1Impl.internal_static_wearGRPC_MovimentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               watchHealth.MovimentRequest.class, watchHealth.MovimentRequest.Builder.class);
     }
@@ -270,7 +270,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_MovimentRequest_descriptor;
+      return watchHealth.Service1Impl.internal_static_wearGRPC_MovimentRequest_descriptor;
     }
 
     @java.lang.Override
@@ -379,10 +379,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ds.service1.MovimentRequest)
+    // @@protoc_insertion_point(builder_scope:wearGRPC.MovimentRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:ds.service1.MovimentRequest)
+  // @@protoc_insertion_point(class_scope:wearGRPC.MovimentRequest)
   private static final watchHealth.MovimentRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new watchHealth.MovimentRequest();

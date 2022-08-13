@@ -7,11 +7,11 @@ package watchHealth;
  * <pre>
  * </pre>
  *
- * Protobuf type {@code ds.service1.StatusSedentary}
+ * Protobuf type {@code wearGRPC.StatusSedentary}
  */
 public  final class StatusSedentary extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ds.service1.StatusSedentary)
+    // @@protoc_insertion_point(message_implements:wearGRPC.StatusSedentary)
     StatusSedentaryOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use StatusSedentary.newBuilder() to construct.
@@ -73,13 +73,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_descriptor;
+    return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_fieldAccessorTable
+    return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             watchHealth.StatusSedentary.class, watchHealth.StatusSedentary.Builder.class);
   }
@@ -277,21 +277,21 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * </pre>
    *
-   * Protobuf type {@code ds.service1.StatusSedentary}
+   * Protobuf type {@code wearGRPC.StatusSedentary}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ds.service1.StatusSedentary)
+      // @@protoc_insertion_point(builder_implements:wearGRPC.StatusSedentary)
       watchHealth.StatusSedentaryOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_descriptor;
+      return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_fieldAccessorTable
+      return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               watchHealth.StatusSedentary.class, watchHealth.StatusSedentary.Builder.class);
     }
@@ -322,7 +322,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_descriptor;
+      return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_descriptor;
     }
 
     @java.lang.Override
@@ -505,10 +505,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ds.service1.StatusSedentary)
+    // @@protoc_insertion_point(builder_scope:wearGRPC.StatusSedentary)
   }
 
-  // @@protoc_insertion_point(class_scope:ds.service1.StatusSedentary)
+  // @@protoc_insertion_point(class_scope:wearGRPC.StatusSedentary)
   private static final watchHealth.StatusSedentary DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new watchHealth.StatusSedentary();
