@@ -19,13 +19,6 @@ public class Service1Impl extends Service1ImplBase {
 		StatusSedentary reply = StatusSedentary.newBuilder().setMessagSedentary(message).build();
 		responseObserver.onNext(reply);
 		responseObserver.onCompleted();
-		super.sedentaryReminder(request, responseObserver);
-	}
-
-	@Override
-	public StreamObserver<heartBeat> heartRate(StreamObserver<avgHeartRate> responseObserver) {
-
-		return super.heartRate(responseObserver);
 	}
 
 	private static String generateReplyMessage() {
