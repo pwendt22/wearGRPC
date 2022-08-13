@@ -8,11 +8,11 @@ package watchHealth;
  *Heart Rate RPC Client Stream
  * </pre>
  *
- * Protobuf type {@code wearGRPC.heartBeat}
+ * Protobuf type {@code ds.service1.heartBeat}
  */
 public  final class heartBeat extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:wearGRPC.heartBeat)
+    // @@protoc_insertion_point(message_implements:ds.service1.heartBeat)
     heartBeatOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use heartBeat.newBuilder() to construct.
@@ -73,13 +73,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return watchHealth.Service1Impl.internal_static_wearGRPC_heartBeat_descriptor;
+    return watchHealth.Service1Impl.internal_static_ds_service1_heartBeat_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return watchHealth.Service1Impl.internal_static_wearGRPC_heartBeat_fieldAccessorTable
+    return watchHealth.Service1Impl.internal_static_ds_service1_heartBeat_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             watchHealth.heartBeat.class, watchHealth.heartBeat.Builder.class);
   }
@@ -254,21 +254,21 @@ private static final long serialVersionUID = 0L;
    *Heart Rate RPC Client Stream
    * </pre>
    *
-   * Protobuf type {@code wearGRPC.heartBeat}
+   * Protobuf type {@code ds.service1.heartBeat}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:wearGRPC.heartBeat)
+      // @@protoc_insertion_point(builder_implements:ds.service1.heartBeat)
       watchHealth.heartBeatOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_heartBeat_descriptor;
+      return watchHealth.Service1Impl.internal_static_ds_service1_heartBeat_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_heartBeat_fieldAccessorTable
+      return watchHealth.Service1Impl.internal_static_ds_service1_heartBeat_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               watchHealth.heartBeat.class, watchHealth.heartBeat.Builder.class);
     }
@@ -299,7 +299,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_heartBeat_descriptor;
+      return watchHealth.Service1Impl.internal_static_ds_service1_heartBeat_descriptor;
     }
 
     @java.lang.Override
@@ -438,10 +438,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:wearGRPC.heartBeat)
+    // @@protoc_insertion_point(builder_scope:ds.service1.heartBeat)
   }
 
-  // @@protoc_insertion_point(class_scope:wearGRPC.heartBeat)
+  // @@protoc_insertion_point(class_scope:ds.service1.heartBeat)
   private static final watchHealth.heartBeat DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new watchHealth.heartBeat();

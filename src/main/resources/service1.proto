@@ -4,39 +4,28 @@ option java_multiple_files = true;
 option java_package = "watchHealth";
 option java_outer_classname = "Service1Impl";
 
-package wearGRPC;
+package ds.service1;
 
 // Interface exported by the server.
 
 // Smart Watch for Health service definition
 service Service1 {
 
-  //server stream - counting the steps
-  rpc stepQty(stepRequest) returns (stream stepResponse) {}
+  //unary
+  rpc sedentaryReminder(MovimentRequest) returns (StatusSedentary) {}
 
   //Heart Rate RPC Client Stream
   rpc heartRate(stream heartBeat) returns (avgHeartRate) {}
 
 }
 //When the user stays a long time without moving the system send an alert message
-message stepStatus{
-  bool actived = 1;
-  int32 count=2;
-}
+message MovimentRequest {
 
-message stepResponse{
-  string result = 1;
-  double avgSpeed = 2;
-  int32 currentC =3;
-}
-
-message stepRequest{
-  stepStatus stepStatus = 1;
 }
 
 //
 message StatusSedentary {
-  string SedentaryAlert = 1;
+  string messagSedentary = 1;
 }
 
 

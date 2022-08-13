@@ -4,16 +4,16 @@
 package watchHealth;
 
 public interface StatusSedentaryOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:wearGRPC.StatusSedentary)
+    // @@protoc_insertion_point(interface_extends:ds.service1.StatusSedentary)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string SedentaryAlert = 1;</code>
+   * <code>string messagSedentary = 1;</code>
    */
-  java.lang.String getSedentaryAlert();
+  java.lang.String getMessagSedentary();
   /**
-   * <code>string SedentaryAlert = 1;</code>
+   * <code>string messagSedentary = 1;</code>
    */
   com.google.protobuf.ByteString
-      getSedentaryAlertBytes();
+      getMessagSedentaryBytes();
 }

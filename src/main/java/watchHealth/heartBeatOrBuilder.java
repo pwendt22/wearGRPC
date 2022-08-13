@@ -4,7 +4,7 @@
 package watchHealth;
 
 public interface heartBeatOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:wearGRPC.heartBeat)
+    // @@protoc_insertion_point(interface_extends:ds.service1.heartBeat)
     com.google.protobuf.MessageOrBuilder {
 
   /**

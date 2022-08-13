@@ -7,11 +7,11 @@ package watchHealth;
  * <pre>
  * </pre>
  *
- * Protobuf type {@code wearGRPC.StatusSedentary}
+ * Protobuf type {@code ds.service1.StatusSedentary}
  */
 public  final class StatusSedentary extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:wearGRPC.StatusSedentary)
+    // @@protoc_insertion_point(message_implements:ds.service1.StatusSedentary)
     StatusSedentaryOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use StatusSedentary.newBuilder() to construct.
@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StatusSedentary() {
-    sedentaryAlert_ = "";
+    messagSedentary_ = "";
   }
 
   @java.lang.Override
@@ -49,7 +49,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            sedentaryAlert_ = s;
+            messagSedentary_ = s;
             break;
           }
           default: {
@@ -73,45 +73,45 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_descriptor;
+    return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_fieldAccessorTable
+    return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             watchHealth.StatusSedentary.class, watchHealth.StatusSedentary.Builder.class);
   }
 
-  public static final int SEDENTARYALERT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sedentaryAlert_;
+  public static final int MESSAGSEDENTARY_FIELD_NUMBER = 1;
+  private volatile java.lang.Object messagSedentary_;
   /**
-   * <code>string SedentaryAlert = 1;</code>
+   * <code>string messagSedentary = 1;</code>
    */
-  public java.lang.String getSedentaryAlert() {
-    java.lang.Object ref = sedentaryAlert_;
+  public java.lang.String getMessagSedentary() {
+    java.lang.Object ref = messagSedentary_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      sedentaryAlert_ = s;
+      messagSedentary_ = s;
       return s;
     }
   }
   /**
-   * <code>string SedentaryAlert = 1;</code>
+   * <code>string messagSedentary = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getSedentaryAlertBytes() {
-    java.lang.Object ref = sedentaryAlert_;
+      getMessagSedentaryBytes() {
+    java.lang.Object ref = messagSedentary_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      sedentaryAlert_ = b;
+      messagSedentary_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -132,8 +132,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getSedentaryAlertBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sedentaryAlert_);
+    if (!getMessagSedentaryBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, messagSedentary_);
     }
     unknownFields.writeTo(output);
   }
@@ -144,8 +144,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getSedentaryAlertBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sedentaryAlert_);
+    if (!getMessagSedentaryBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, messagSedentary_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -163,8 +163,8 @@ private static final long serialVersionUID = 0L;
     watchHealth.StatusSedentary other = (watchHealth.StatusSedentary) obj;
 
     boolean result = true;
-    result = result && getSedentaryAlert()
-        .equals(other.getSedentaryAlert());
+    result = result && getMessagSedentary()
+        .equals(other.getMessagSedentary());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -176,8 +176,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SEDENTARYALERT_FIELD_NUMBER;
-    hash = (53 * hash) + getSedentaryAlert().hashCode();
+    hash = (37 * hash) + MESSAGSEDENTARY_FIELD_NUMBER;
+    hash = (53 * hash) + getMessagSedentary().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -277,21 +277,21 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * </pre>
    *
-   * Protobuf type {@code wearGRPC.StatusSedentary}
+   * Protobuf type {@code ds.service1.StatusSedentary}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:wearGRPC.StatusSedentary)
+      // @@protoc_insertion_point(builder_implements:ds.service1.StatusSedentary)
       watchHealth.StatusSedentaryOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_descriptor;
+      return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_fieldAccessorTable
+      return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               watchHealth.StatusSedentary.class, watchHealth.StatusSedentary.Builder.class);
     }
@@ -314,7 +314,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      sedentaryAlert_ = "";
+      messagSedentary_ = "";
 
       return this;
     }
@@ -322,7 +322,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return watchHealth.Service1Impl.internal_static_wearGRPC_StatusSedentary_descriptor;
+      return watchHealth.Service1Impl.internal_static_ds_service1_StatusSedentary_descriptor;
     }
 
     @java.lang.Override
@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public watchHealth.StatusSedentary buildPartial() {
       watchHealth.StatusSedentary result = new watchHealth.StatusSedentary(this);
-      result.sedentaryAlert_ = sedentaryAlert_;
+      result.messagSedentary_ = messagSedentary_;
       onBuilt();
       return result;
     }
@@ -391,8 +391,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(watchHealth.StatusSedentary other) {
       if (other == watchHealth.StatusSedentary.getDefaultInstance()) return this;
-      if (!other.getSedentaryAlert().isEmpty()) {
-        sedentaryAlert_ = other.sedentaryAlert_;
+      if (!other.getMessagSedentary().isEmpty()) {
+        messagSedentary_ = other.messagSedentary_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -424,71 +424,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object sedentaryAlert_ = "";
+    private java.lang.Object messagSedentary_ = "";
     /**
-     * <code>string SedentaryAlert = 1;</code>
+     * <code>string messagSedentary = 1;</code>
      */
-    public java.lang.String getSedentaryAlert() {
-      java.lang.Object ref = sedentaryAlert_;
+    public java.lang.String getMessagSedentary() {
+      java.lang.Object ref = messagSedentary_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sedentaryAlert_ = s;
+        messagSedentary_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string SedentaryAlert = 1;</code>
+     * <code>string messagSedentary = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getSedentaryAlertBytes() {
-      java.lang.Object ref = sedentaryAlert_;
+        getMessagSedentaryBytes() {
+      java.lang.Object ref = messagSedentary_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sedentaryAlert_ = b;
+        messagSedentary_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string SedentaryAlert = 1;</code>
+     * <code>string messagSedentary = 1;</code>
      */
-    public Builder setSedentaryAlert(
+    public Builder setMessagSedentary(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      sedentaryAlert_ = value;
+      messagSedentary_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string SedentaryAlert = 1;</code>
+     * <code>string messagSedentary = 1;</code>
      */
-    public Builder clearSedentaryAlert() {
+    public Builder clearMessagSedentary() {
       
-      sedentaryAlert_ = getDefaultInstance().getSedentaryAlert();
+      messagSedentary_ = getDefaultInstance().getMessagSedentary();
       onChanged();
       return this;
     }
     /**
-     * <code>string SedentaryAlert = 1;</code>
+     * <code>string messagSedentary = 1;</code>
      */
-    public Builder setSedentaryAlertBytes(
+    public Builder setMessagSedentaryBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      sedentaryAlert_ = value;
+      messagSedentary_ = value;
       onChanged();
       return this;
     }
@@ -505,10 +505,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:wearGRPC.StatusSedentary)
+    // @@protoc_insertion_point(builder_scope:ds.service1.StatusSedentary)
   }
 
-  // @@protoc_insertion_point(class_scope:wearGRPC.StatusSedentary)
+  // @@protoc_insertion_point(class_scope:ds.service1.StatusSedentary)
   private static final watchHealth.StatusSedentary DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new watchHealth.StatusSedentary();

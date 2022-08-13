@@ -27,39 +27,39 @@ public final class Service1Grpc {
 
   private Service1Grpc() {}
 
-  public static final String SERVICE_NAME = "wearGRPC.Service1";
+  public static final String SERVICE_NAME = "ds.service1.Service1";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<watchHealth.stepRequest,
-      watchHealth.stepResponse> getStepQtyMethod;
+  private static volatile io.grpc.MethodDescriptor<watchHealth.MovimentRequest,
+      watchHealth.StatusSedentary> getSedentaryReminderMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "stepQty",
-      requestType = watchHealth.stepRequest.class,
-      responseType = watchHealth.stepResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<watchHealth.stepRequest,
-      watchHealth.stepResponse> getStepQtyMethod() {
-    io.grpc.MethodDescriptor<watchHealth.stepRequest, watchHealth.stepResponse> getStepQtyMethod;
-    if ((getStepQtyMethod = Service1Grpc.getStepQtyMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "sedentaryReminder",
+      requestType = watchHealth.MovimentRequest.class,
+      responseType = watchHealth.StatusSedentary.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<watchHealth.MovimentRequest,
+      watchHealth.StatusSedentary> getSedentaryReminderMethod() {
+    io.grpc.MethodDescriptor<watchHealth.MovimentRequest, watchHealth.StatusSedentary> getSedentaryReminderMethod;
+    if ((getSedentaryReminderMethod = Service1Grpc.getSedentaryReminderMethod) == null) {
       synchronized (Service1Grpc.class) {
-        if ((getStepQtyMethod = Service1Grpc.getStepQtyMethod) == null) {
-          Service1Grpc.getStepQtyMethod = getStepQtyMethod = 
-              io.grpc.MethodDescriptor.<watchHealth.stepRequest, watchHealth.stepResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+        if ((getSedentaryReminderMethod = Service1Grpc.getSedentaryReminderMethod) == null) {
+          Service1Grpc.getSedentaryReminderMethod = getSedentaryReminderMethod = 
+              io.grpc.MethodDescriptor.<watchHealth.MovimentRequest, watchHealth.StatusSedentary>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "wearGRPC.Service1", "stepQty"))
+                  "ds.service1.Service1", "sedentaryReminder"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  watchHealth.stepRequest.getDefaultInstance()))
+                  watchHealth.MovimentRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  watchHealth.stepResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new Service1MethodDescriptorSupplier("stepQty"))
+                  watchHealth.StatusSedentary.getDefaultInstance()))
+                  .setSchemaDescriptor(new Service1MethodDescriptorSupplier("sedentaryReminder"))
                   .build();
           }
         }
      }
-     return getStepQtyMethod;
+     return getSedentaryReminderMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<watchHealth.heartBeat,
@@ -80,7 +80,7 @@ public final class Service1Grpc {
               io.grpc.MethodDescriptor.<watchHealth.heartBeat, watchHealth.avgHeartRate>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "wearGRPC.Service1", "heartRate"))
+                  "ds.service1.Service1", "heartRate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   watchHealth.heartBeat.getDefaultInstance()))
@@ -126,12 +126,12 @@ public final class Service1Grpc {
 
     /**
      * <pre>
-     *server stream - counting the steps
+     *unary
      * </pre>
      */
-    public void stepQty(watchHealth.stepRequest request,
-        io.grpc.stub.StreamObserver<watchHealth.stepResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getStepQtyMethod(), responseObserver);
+    public void sedentaryReminder(watchHealth.MovimentRequest request,
+        io.grpc.stub.StreamObserver<watchHealth.StatusSedentary> responseObserver) {
+      asyncUnimplementedUnaryCall(getSedentaryReminderMethod(), responseObserver);
     }
 
     /**
@@ -147,12 +147,12 @@ public final class Service1Grpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getStepQtyMethod(),
-            asyncServerStreamingCall(
+            getSedentaryReminderMethod(),
+            asyncUnaryCall(
               new MethodHandlers<
-                watchHealth.stepRequest,
-                watchHealth.stepResponse>(
-                  this, METHODID_STEP_QTY)))
+                watchHealth.MovimentRequest,
+                watchHealth.StatusSedentary>(
+                  this, METHODID_SEDENTARY_REMINDER)))
           .addMethod(
             getHeartRateMethod(),
             asyncClientStreamingCall(
@@ -187,13 +187,13 @@ public final class Service1Grpc {
 
     /**
      * <pre>
-     *server stream - counting the steps
+     *unary
      * </pre>
      */
-    public void stepQty(watchHealth.stepRequest request,
-        io.grpc.stub.StreamObserver<watchHealth.stepResponse> responseObserver) {
-      asyncServerStreamingCall(
-          getChannel().newCall(getStepQtyMethod(), getCallOptions()), request, responseObserver);
+    public void sedentaryReminder(watchHealth.MovimentRequest request,
+        io.grpc.stub.StreamObserver<watchHealth.StatusSedentary> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSedentaryReminderMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -231,13 +231,12 @@ public final class Service1Grpc {
 
     /**
      * <pre>
-     *server stream - counting the steps
+     *unary
      * </pre>
      */
-    public java.util.Iterator<watchHealth.stepResponse> stepQty(
-        watchHealth.stepRequest request) {
-      return blockingServerStreamingCall(
-          getChannel(), getStepQtyMethod(), getCallOptions(), request);
+    public watchHealth.StatusSedentary sedentaryReminder(watchHealth.MovimentRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSedentaryReminderMethod(), getCallOptions(), request);
     }
   }
 
@@ -261,9 +260,20 @@ public final class Service1Grpc {
         io.grpc.CallOptions callOptions) {
       return new Service1FutureStub(channel, callOptions);
     }
+
+    /**
+     * <pre>
+     *unary
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<watchHealth.StatusSedentary> sedentaryReminder(
+        watchHealth.MovimentRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSedentaryReminderMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_STEP_QTY = 0;
+  private static final int METHODID_SEDENTARY_REMINDER = 0;
   private static final int METHODID_HEART_RATE = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -283,9 +293,9 @@ public final class Service1Grpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_STEP_QTY:
-          serviceImpl.stepQty((watchHealth.stepRequest) request,
-              (io.grpc.stub.StreamObserver<watchHealth.stepResponse>) responseObserver);
+        case METHODID_SEDENTARY_REMINDER:
+          serviceImpl.sedentaryReminder((watchHealth.MovimentRequest) request,
+              (io.grpc.stub.StreamObserver<watchHealth.StatusSedentary>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -351,7 +361,7 @@ public final class Service1Grpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new Service1FileDescriptorSupplier())
-              .addMethod(getStepQtyMethod())
+              .addMethod(getSedentaryReminderMethod())
               .addMethod(getHeartRateMethod())
               .build();
         }
