@@ -32,15 +32,3 @@ public class Server1 {
 	}
 }
 
-/*
-		
-        Server server = ServerBuilder.forPort(port).addService(new Service1Impl()).build();
-        System.out.println("Server Starting");
-        server.start();
-        System.out.println("Server Started");
-        server.awaitTermination();      		
-	}
-  }
-
-*/
-
