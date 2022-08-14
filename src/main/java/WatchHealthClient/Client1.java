@@ -24,9 +24,9 @@ public class Client1 {
     private static Service1BlockingStub bStub;   
 	
 	public static void main(String[] args) throws InterruptedException {
+		//files based on class's files
 		
-		
-		// jmdns
+		// JmDNS
 			ServiceInfo serviceInfo;
 			String service_type = "_WatchHealth._tcp.local.";
 			String service_name = "GrpcServer";

@@ -21,9 +21,8 @@ private static final long serialVersionUID = 0L;
   }
   private sportData() {
     typeActvity_ = "";
-    avgVelocity_ = 0;
-    durationTime_ = 0D;
-    basalMetab_ = 0;
+    theGoal_ = 0D;
+    duration_ = 0D;
   }
 
   @java.lang.Override
@@ -56,19 +55,14 @@ private static final long serialVersionUID = 0L;
             typeActvity_ = s;
             break;
           }
-          case 16: {
+          case 17: {
 
-            avgVelocity_ = input.readInt32();
+            theGoal_ = input.readDouble();
             break;
           }
           case 25: {
 
-            durationTime_ = input.readDouble();
-            break;
-          }
-          case 32: {
-
-            basalMetab_ = input.readInt32();
+            duration_ = input.readDouble();
             break;
           }
           default: {
@@ -137,31 +131,22 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int AVGVELOCITY_FIELD_NUMBER = 2;
-  private int avgVelocity_;
+  public static final int THEGOAL_FIELD_NUMBER = 2;
+  private double theGoal_;
   /**
-   * <code>int32 AvgVelocity = 2;</code>
+   * <code>double theGoal = 2;</code>
    */
-  public int getAvgVelocity() {
-    return avgVelocity_;
+  public double getTheGoal() {
+    return theGoal_;
   }
 
-  public static final int DURATIONTIME_FIELD_NUMBER = 3;
-  private double durationTime_;
+  public static final int DURATION_FIELD_NUMBER = 3;
+  private double duration_;
   /**
-   * <code>double durationTime = 3;</code>
+   * <code>double duration = 3;</code>
    */
-  public double getDurationTime() {
-    return durationTime_;
-  }
-
-  public static final int BASALMETAB_FIELD_NUMBER = 4;
-  private int basalMetab_;
-  /**
-   * <code>int32 basalMetab = 4;</code>
-   */
-  public int getBasalMetab() {
-    return basalMetab_;
+  public double getDuration() {
+    return duration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -181,14 +166,11 @@ private static final long serialVersionUID = 0L;
     if (!getTypeActvityBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, typeActvity_);
     }
-    if (avgVelocity_ != 0) {
-      output.writeInt32(2, avgVelocity_);
+    if (theGoal_ != 0D) {
+      output.writeDouble(2, theGoal_);
     }
-    if (durationTime_ != 0D) {
-      output.writeDouble(3, durationTime_);
-    }
-    if (basalMetab_ != 0) {
-      output.writeInt32(4, basalMetab_);
+    if (duration_ != 0D) {
+      output.writeDouble(3, duration_);
     }
     unknownFields.writeTo(output);
   }
@@ -202,17 +184,13 @@ private static final long serialVersionUID = 0L;
     if (!getTypeActvityBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, typeActvity_);
     }
-    if (avgVelocity_ != 0) {
+    if (theGoal_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, avgVelocity_);
+        .computeDoubleSize(2, theGoal_);
     }
-    if (durationTime_ != 0D) {
+    if (duration_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(3, durationTime_);
-    }
-    if (basalMetab_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, basalMetab_);
+        .computeDoubleSize(3, duration_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,14 +210,14 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getTypeActvity()
         .equals(other.getTypeActvity());
-    result = result && (getAvgVelocity()
-        == other.getAvgVelocity());
     result = result && (
-        java.lang.Double.doubleToLongBits(getDurationTime())
+        java.lang.Double.doubleToLongBits(getTheGoal())
         == java.lang.Double.doubleToLongBits(
-            other.getDurationTime()));
-    result = result && (getBasalMetab()
-        == other.getBasalMetab());
+            other.getTheGoal()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getDuration())
+        == java.lang.Double.doubleToLongBits(
+            other.getDuration()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -253,13 +231,12 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPEACTVITY_FIELD_NUMBER;
     hash = (53 * hash) + getTypeActvity().hashCode();
-    hash = (37 * hash) + AVGVELOCITY_FIELD_NUMBER;
-    hash = (53 * hash) + getAvgVelocity();
-    hash = (37 * hash) + DURATIONTIME_FIELD_NUMBER;
+    hash = (37 * hash) + THEGOAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getDurationTime()));
-    hash = (37 * hash) + BASALMETAB_FIELD_NUMBER;
-    hash = (53 * hash) + getBasalMetab();
+        java.lang.Double.doubleToLongBits(getTheGoal()));
+    hash = (37 * hash) + DURATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getDuration()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -399,11 +376,9 @@ private static final long serialVersionUID = 0L;
       super.clear();
       typeActvity_ = "";
 
-      avgVelocity_ = 0;
+      theGoal_ = 0D;
 
-      durationTime_ = 0D;
-
-      basalMetab_ = 0;
+      duration_ = 0D;
 
       return this;
     }
@@ -432,9 +407,8 @@ private static final long serialVersionUID = 0L;
     public watchSport.sportData buildPartial() {
       watchSport.sportData result = new watchSport.sportData(this);
       result.typeActvity_ = typeActvity_;
-      result.avgVelocity_ = avgVelocity_;
-      result.durationTime_ = durationTime_;
-      result.basalMetab_ = basalMetab_;
+      result.theGoal_ = theGoal_;
+      result.duration_ = duration_;
       onBuilt();
       return result;
     }
@@ -487,14 +461,11 @@ private static final long serialVersionUID = 0L;
         typeActvity_ = other.typeActvity_;
         onChanged();
       }
-      if (other.getAvgVelocity() != 0) {
-        setAvgVelocity(other.getAvgVelocity());
+      if (other.getTheGoal() != 0D) {
+        setTheGoal(other.getTheGoal());
       }
-      if (other.getDurationTime() != 0D) {
-        setDurationTime(other.getDurationTime());
-      }
-      if (other.getBasalMetab() != 0) {
-        setBasalMetab(other.getBasalMetab());
+      if (other.getDuration() != 0D) {
+        setDuration(other.getDuration());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -594,80 +565,54 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int avgVelocity_ ;
+    private double theGoal_ ;
     /**
-     * <code>int32 AvgVelocity = 2;</code>
+     * <code>double theGoal = 2;</code>
      */
-    public int getAvgVelocity() {
-      return avgVelocity_;
+    public double getTheGoal() {
+      return theGoal_;
     }
     /**
-     * <code>int32 AvgVelocity = 2;</code>
+     * <code>double theGoal = 2;</code>
      */
-    public Builder setAvgVelocity(int value) {
+    public Builder setTheGoal(double value) {
       
-      avgVelocity_ = value;
+      theGoal_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 AvgVelocity = 2;</code>
+     * <code>double theGoal = 2;</code>
      */
-    public Builder clearAvgVelocity() {
+    public Builder clearTheGoal() {
       
-      avgVelocity_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private double durationTime_ ;
-    /**
-     * <code>double durationTime = 3;</code>
-     */
-    public double getDurationTime() {
-      return durationTime_;
-    }
-    /**
-     * <code>double durationTime = 3;</code>
-     */
-    public Builder setDurationTime(double value) {
-      
-      durationTime_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>double durationTime = 3;</code>
-     */
-    public Builder clearDurationTime() {
-      
-      durationTime_ = 0D;
+      theGoal_ = 0D;
       onChanged();
       return this;
     }
 
-    private int basalMetab_ ;
+    private double duration_ ;
     /**
-     * <code>int32 basalMetab = 4;</code>
+     * <code>double duration = 3;</code>
      */
-    public int getBasalMetab() {
-      return basalMetab_;
+    public double getDuration() {
+      return duration_;
     }
     /**
-     * <code>int32 basalMetab = 4;</code>
+     * <code>double duration = 3;</code>
      */
-    public Builder setBasalMetab(int value) {
+    public Builder setDuration(double value) {
       
-      basalMetab_ = value;
+      duration_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 basalMetab = 4;</code>
+     * <code>double duration = 3;</code>
      */
-    public Builder clearBasalMetab() {
+    public Builder clearDuration() {
       
-      basalMetab_ = 0;
+      duration_ = 0D;
       onChanged();
       return this;
     }

@@ -46,15 +46,14 @@ public final class Service2Impl {
       "\n\016service2.proto\022\010wearGRPC\"7\n\007runData\022\017\n" +
       "\007runMode\030\001 \001(\t\022\r\n\005steps\030\002 \001(\005\022\014\n\004time\030\003 " +
       "\001(\001\"4\n\013runAnalysis\022\020\n\010distance\030\001 \001(\005\022\023\n\013" +
-      "AvgVelocity\030\002 \001(\005\"_\n\tsportData\022\023\n\013typeAc" +
-      "tvity\030\001 \001(\t\022\023\n\013AvgVelocity\030\002 \001(\005\022\024\n\014dura" +
-      "tionTime\030\003 \001(\001\022\022\n\nbasalMetab\030\004 \001(\005\"G\n\rsp" +
-      "ortAnalysis\022\026\n\016caloriesBurned\030\001 \001(\005\022\017\n\007t" +
-      "heGoal\030\002 \001(\t\022\r\n\005quote\030\003 \001(\t2\204\001\n\010Service2" +
-      "\0227\n\007running\022\021.wearGRPC.runData\032\025.wearGRP" +
-      "C.runAnalysis\"\0000\001\022?\n\tsportMode\022\023.wearGRP" +
-      "C.sportData\032\027.wearGRPC.sportAnalysis\"\000(\001" +
-      "0\001B\034\n\nwatchSportB\014Service2ImplP\001b\006proto3"
+      "AvgVelocity\030\002 \001(\005\"C\n\tsportData\022\023\n\013typeAc" +
+      "tvity\030\001 \001(\t\022\017\n\007theGoal\030\002 \001(\001\022\020\n\010duration" +
+      "\030\003 \001(\001\"8\n\rsportAnalysis\022\026\n\016caloriesBurne" +
+      "d\030\001 \001(\005\022\017\n\007theGoal\030\002 \001(\0012\204\001\n\010Service2\0227\n" +
+      "\007running\022\021.wearGRPC.runData\032\025.wearGRPC.r" +
+      "unAnalysis\"\0000\001\022?\n\tsportMode\022\023.wearGRPC.s" +
+      "portData\032\027.wearGRPC.sportAnalysis\"\000(\0010\001B" +
+      "\034\n\nwatchSportB\014Service2ImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -85,13 +84,13 @@ public final class Service2Impl {
     internal_static_wearGRPC_sportData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_wearGRPC_sportData_descriptor,
-        new java.lang.String[] { "TypeActvity", "AvgVelocity", "DurationTime", "BasalMetab", });
+        new java.lang.String[] { "TypeActvity", "TheGoal", "Duration", });
     internal_static_wearGRPC_sportAnalysis_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_wearGRPC_sportAnalysis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_wearGRPC_sportAnalysis_descriptor,
-        new java.lang.String[] { "CaloriesBurned", "TheGoal", "Quote", });
+        new java.lang.String[] { "CaloriesBurned", "TheGoal", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -13,7 +13,7 @@ package wearGRPC;
 service Service2 {
 
   //Running mode
-  //RPC Bidirectional
+  //RPC server stream
   rpc running(runData) returns (stream runAnalysis) {}
 
   //Calories burned - RPC Bidirectional
@@ -37,13 +37,13 @@ message runAnalysis {
   //Calories burned - RPC Bidirectional
 message sportData {
   string typeActvity = 1;
-  int32 AvgVelocity = 2;
-  double durationTime = 3;
-   int32 basalMetab = 4;
+  double theGoal = 2;
+ double duration = 3;
+
 }
 
 message sportAnalysis {
   int32 caloriesBurned = 1;
-  string theGoal = 2;
-  string quote = 3;
+    double theGoal = 2;
+
 }

@@ -18,17 +18,12 @@ public interface sportDataOrBuilder extends
       getTypeActvityBytes();
 
   /**
-   * <code>int32 AvgVelocity = 2;</code>
+   * <code>double theGoal = 2;</code>
    */
-  int getAvgVelocity();
+  double getTheGoal();
 
   /**
-   * <code>double durationTime = 3;</code>
+   * <code>double duration = 3;</code>
    */
-  double getDurationTime();
-
-  /**
-   * <code>int32 basalMetab = 4;</code>
-   */
-  int getBasalMetab();
+  double getDuration();
 }

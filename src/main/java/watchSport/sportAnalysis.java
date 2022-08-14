@@ -17,8 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private sportAnalysis() {
     caloriesBurned_ = 0;
-    theGoal_ = "";
-    quote_ = "";
+    theGoal_ = 0D;
   }
 
   @java.lang.Override
@@ -50,16 +49,9 @@ private static final long serialVersionUID = 0L;
             caloriesBurned_ = input.readInt32();
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 17: {
 
-            theGoal_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            quote_ = s;
+            theGoal_ = input.readDouble();
             break;
           }
           default: {
@@ -104,71 +96,12 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int THEGOAL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object theGoal_;
+  private double theGoal_;
   /**
-   * <code>string theGoal = 2;</code>
+   * <code>double theGoal = 2;</code>
    */
-  public java.lang.String getTheGoal() {
-    java.lang.Object ref = theGoal_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      theGoal_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string theGoal = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getTheGoalBytes() {
-    java.lang.Object ref = theGoal_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      theGoal_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int QUOTE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object quote_;
-  /**
-   * <code>string quote = 3;</code>
-   */
-  public java.lang.String getQuote() {
-    java.lang.Object ref = quote_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      quote_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string quote = 3;</code>
-   */
-  public com.google.protobuf.ByteString
-      getQuoteBytes() {
-    java.lang.Object ref = quote_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      quote_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public double getTheGoal() {
+    return theGoal_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -188,11 +121,8 @@ private static final long serialVersionUID = 0L;
     if (caloriesBurned_ != 0) {
       output.writeInt32(1, caloriesBurned_);
     }
-    if (!getTheGoalBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, theGoal_);
-    }
-    if (!getQuoteBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, quote_);
+    if (theGoal_ != 0D) {
+      output.writeDouble(2, theGoal_);
     }
     unknownFields.writeTo(output);
   }
@@ -207,11 +137,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, caloriesBurned_);
     }
-    if (!getTheGoalBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, theGoal_);
-    }
-    if (!getQuoteBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, quote_);
+    if (theGoal_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(2, theGoal_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,10 +159,10 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getCaloriesBurned()
         == other.getCaloriesBurned());
-    result = result && getTheGoal()
-        .equals(other.getTheGoal());
-    result = result && getQuote()
-        .equals(other.getQuote());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getTheGoal())
+        == java.lang.Double.doubleToLongBits(
+            other.getTheGoal()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -249,9 +177,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CALORIESBURNED_FIELD_NUMBER;
     hash = (53 * hash) + getCaloriesBurned();
     hash = (37 * hash) + THEGOAL_FIELD_NUMBER;
-    hash = (53 * hash) + getTheGoal().hashCode();
-    hash = (37 * hash) + QUOTE_FIELD_NUMBER;
-    hash = (53 * hash) + getQuote().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getTheGoal()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -387,9 +314,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       caloriesBurned_ = 0;
 
-      theGoal_ = "";
-
-      quote_ = "";
+      theGoal_ = 0D;
 
       return this;
     }
@@ -419,7 +344,6 @@ private static final long serialVersionUID = 0L;
       watchSport.sportAnalysis result = new watchSport.sportAnalysis(this);
       result.caloriesBurned_ = caloriesBurned_;
       result.theGoal_ = theGoal_;
-      result.quote_ = quote_;
       onBuilt();
       return result;
     }
@@ -471,13 +395,8 @@ private static final long serialVersionUID = 0L;
       if (other.getCaloriesBurned() != 0) {
         setCaloriesBurned(other.getCaloriesBurned());
       }
-      if (!other.getTheGoal().isEmpty()) {
-        theGoal_ = other.theGoal_;
-        onChanged();
-      }
-      if (!other.getQuote().isEmpty()) {
-        quote_ = other.quote_;
-        onChanged();
+      if (other.getTheGoal() != 0D) {
+        setTheGoal(other.getTheGoal());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -534,140 +453,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object theGoal_ = "";
+    private double theGoal_ ;
     /**
-     * <code>string theGoal = 2;</code>
+     * <code>double theGoal = 2;</code>
      */
-    public java.lang.String getTheGoal() {
-      java.lang.Object ref = theGoal_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        theGoal_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public double getTheGoal() {
+      return theGoal_;
     }
     /**
-     * <code>string theGoal = 2;</code>
+     * <code>double theGoal = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getTheGoalBytes() {
-      java.lang.Object ref = theGoal_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        theGoal_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string theGoal = 2;</code>
-     */
-    public Builder setTheGoal(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setTheGoal(double value) {
+      
       theGoal_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string theGoal = 2;</code>
+     * <code>double theGoal = 2;</code>
      */
     public Builder clearTheGoal() {
       
-      theGoal_ = getDefaultInstance().getTheGoal();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string theGoal = 2;</code>
-     */
-    public Builder setTheGoalBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      theGoal_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object quote_ = "";
-    /**
-     * <code>string quote = 3;</code>
-     */
-    public java.lang.String getQuote() {
-      java.lang.Object ref = quote_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        quote_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string quote = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getQuoteBytes() {
-      java.lang.Object ref = quote_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        quote_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string quote = 3;</code>
-     */
-    public Builder setQuote(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      quote_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string quote = 3;</code>
-     */
-    public Builder clearQuote() {
-      
-      quote_ = getDefaultInstance().getQuote();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string quote = 3;</code>
-     */
-    public Builder setQuoteBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      quote_ = value;
+      theGoal_ = 0D;
       onChanged();
       return this;
     }

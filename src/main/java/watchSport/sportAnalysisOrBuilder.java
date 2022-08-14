@@ -13,22 +13,7 @@ public interface sportAnalysisOrBuilder extends
   int getCaloriesBurned();
 
   /**
-   * <code>string theGoal = 2;</code>
+   * <code>double theGoal = 2;</code>
    */
-  java.lang.String getTheGoal();
-  /**
-   * <code>string theGoal = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getTheGoalBytes();
-
-  /**
-   * <code>string quote = 3;</code>
-   */
-  java.lang.String getQuote();
-  /**
-   * <code>string quote = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getQuoteBytes();
+  double getTheGoal();
 }

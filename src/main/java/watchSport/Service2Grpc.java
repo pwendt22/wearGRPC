@@ -121,7 +121,7 @@ public final class Service2Grpc {
     /**
      * <pre>
      *Running mode
-     *RPC Bidirectional
+     *RPC server stream
      * </pre>
      */
     public void running(watchSport.runData request,
@@ -180,7 +180,7 @@ public final class Service2Grpc {
     /**
      * <pre>
      *Running mode
-     *RPC Bidirectional
+     *RPC server stream
      * </pre>
      */
     public void running(watchSport.runData request,
@@ -222,7 +222,7 @@ public final class Service2Grpc {
     /**
      * <pre>
      *Running mode
-     *RPC Bidirectional
+     *RPC server stream
      * </pre>
      */
     public java.util.Iterator<watchSport.runAnalysis> running(
