@@ -8,12 +8,11 @@ package wearGRPC;
 
 
 
-service GetHeartBeats {
-
-  //Running mode
   //RPC server stream
-  rpc GetHeartBeats(BeatsServerStreamRequest) returns (stream BeatsResponse);
-  //Client Streaming
+
+
+service GetHeartBeats {rpc GetHeartBeats(BeatsServerStreamRequest) returns (stream BeatsResponse);
+
 
 }
 

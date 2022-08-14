@@ -5,8 +5,7 @@ import io.grpc.stub.StreamObserver;
 
 public class Service4_Impl extends AvgHeartBeatImplBase {
 
-		@Override
-	    public StreamObserver<GetHeartBeatRequest> getHeartBeatsAverage(StreamObserver<GetHeartBeatResponse> responseObserver) {
+		public StreamObserver<GetHeartBeatRequest> getHeartBeatsAverage(StreamObserver<GetHeartBeatResponse> responseObserver) {
 	        StreamObserver<GetHeartBeatRequest> requestObserver = new StreamObserver<GetHeartBeatRequest>()
 	        {
 	            int sum = 0;
@@ -24,7 +23,7 @@ public class Service4_Impl extends AvgHeartBeatImplBase {
 	            @Override
 	            public void onCompleted()
 	            {   double average = (double) sum/count;
-	                responseObserver.onNext(GetHeartBeatRequest.newBuilder().setAvgHeart(average)).build());
+	                responseObserver.onNext(GetHeartBeatRequest.newBuilder().setavgHeart(average)).build());
 	                responseObserver.onCompleted();
 	            }
 	        };

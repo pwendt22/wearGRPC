@@ -14,8 +14,7 @@ service Service1 {
   //unary
   rpc sedentaryReminder(MovimentRequest) returns (StatusSedentary) {}
 
-  //Heart Rate RPC Client Stream
-  rpc heartRate(stream heartBeat) returns (avgHeartRate) {}
+
 
 }
 //When the user stays a long time without moving the system send an alert message
@@ -29,12 +28,3 @@ message StatusSedentary {
 }
 
 
-//Heart Rate RPC Client Stream
-message heartBeat {
-  int32 heartBeat = 1;
-}
-
-//
-message avgHeartRate {
-  int32 avgHeartRate = 1;
-}

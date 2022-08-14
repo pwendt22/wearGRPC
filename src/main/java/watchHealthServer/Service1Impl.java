@@ -7,8 +7,7 @@ import io.grpc.stub.StreamObserver;
 import watchHealth.MovimentRequest;
 import watchHealth.Service1Grpc.Service1ImplBase;
 import watchHealth.StatusSedentary;
-import watchHealth.avgHeartRate;
-import watchHealth.heartBeat;
+
 
 public class Service1Impl extends Service1ImplBase {
 

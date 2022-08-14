@@ -87,10 +87,6 @@ public final class GetHeartBeatsGrpc {
   public static abstract class GetHeartBeatsImplBase implements io.grpc.BindableService {
 
     /**
-     * <pre>
-     *Running mode
-     *RPC server stream
-     * </pre>
      */
     public void getHeartBeats(GetHeartBeats.BeatsServerStreamRequest request,
         io.grpc.stub.StreamObserver<GetHeartBeats.BeatsResponse> responseObserver) {
@@ -129,10 +125,6 @@ public final class GetHeartBeatsGrpc {
     }
 
     /**
-     * <pre>
-     *Running mode
-     *RPC server stream
-     * </pre>
      */
     public void getHeartBeats(GetHeartBeats.BeatsServerStreamRequest request,
         io.grpc.stub.StreamObserver<GetHeartBeats.BeatsResponse> responseObserver) {
@@ -160,10 +152,6 @@ public final class GetHeartBeatsGrpc {
     }
 
     /**
-     * <pre>
-     *Running mode
-     *RPC server stream
-     * </pre>
      */
     public java.util.Iterator<GetHeartBeats.BeatsResponse> getHeartBeats(
         GetHeartBeats.BeatsServerStreamRequest request) {

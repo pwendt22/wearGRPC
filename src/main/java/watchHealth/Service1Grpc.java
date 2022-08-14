@@ -62,38 +62,6 @@ public final class Service1Grpc {
      return getSedentaryReminderMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<watchHealth.heartBeat,
-      watchHealth.avgHeartRate> getHeartRateMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "heartRate",
-      requestType = watchHealth.heartBeat.class,
-      responseType = watchHealth.avgHeartRate.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<watchHealth.heartBeat,
-      watchHealth.avgHeartRate> getHeartRateMethod() {
-    io.grpc.MethodDescriptor<watchHealth.heartBeat, watchHealth.avgHeartRate> getHeartRateMethod;
-    if ((getHeartRateMethod = Service1Grpc.getHeartRateMethod) == null) {
-      synchronized (Service1Grpc.class) {
-        if ((getHeartRateMethod = Service1Grpc.getHeartRateMethod) == null) {
-          Service1Grpc.getHeartRateMethod = getHeartRateMethod = 
-              io.grpc.MethodDescriptor.<watchHealth.heartBeat, watchHealth.avgHeartRate>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "wearGRPC.Service1", "heartRate"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  watchHealth.heartBeat.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  watchHealth.avgHeartRate.getDefaultInstance()))
-                  .setSchemaDescriptor(new Service1MethodDescriptorSupplier("heartRate"))
-                  .build();
-          }
-        }
-     }
-     return getHeartRateMethod;
-  }
-
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -134,16 +102,6 @@ public final class Service1Grpc {
       asyncUnimplementedUnaryCall(getSedentaryReminderMethod(), responseObserver);
     }
 
-    /**
-     * <pre>
-     *Heart Rate RPC Client Stream
-     * </pre>
-     */
-    public io.grpc.stub.StreamObserver<watchHealth.heartBeat> heartRate(
-        io.grpc.stub.StreamObserver<watchHealth.avgHeartRate> responseObserver) {
-      return asyncUnimplementedStreamingCall(getHeartRateMethod(), responseObserver);
-    }
-
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -153,13 +111,6 @@ public final class Service1Grpc {
                 watchHealth.MovimentRequest,
                 watchHealth.StatusSedentary>(
                   this, METHODID_SEDENTARY_REMINDER)))
-          .addMethod(
-            getHeartRateMethod(),
-            asyncClientStreamingCall(
-              new MethodHandlers<
-                watchHealth.heartBeat,
-                watchHealth.avgHeartRate>(
-                  this, METHODID_HEART_RATE)))
           .build();
     }
   }
@@ -194,17 +145,6 @@ public final class Service1Grpc {
         io.grpc.stub.StreamObserver<watchHealth.StatusSedentary> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSedentaryReminderMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     *Heart Rate RPC Client Stream
-     * </pre>
-     */
-    public io.grpc.stub.StreamObserver<watchHealth.heartBeat> heartRate(
-        io.grpc.stub.StreamObserver<watchHealth.avgHeartRate> responseObserver) {
-      return asyncClientStreamingCall(
-          getChannel().newCall(getHeartRateMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -274,7 +214,6 @@ public final class Service1Grpc {
   }
 
   private static final int METHODID_SEDENTARY_REMINDER = 0;
-  private static final int METHODID_HEART_RATE = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -307,9 +246,6 @@ public final class Service1Grpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_HEART_RATE:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.heartRate(
-              (io.grpc.stub.StreamObserver<watchHealth.avgHeartRate>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -362,7 +298,6 @@ public final class Service1Grpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new Service1FileDescriptorSupplier())
               .addMethod(getSedentaryReminderMethod())
-              .addMethod(getHeartRateMethod())
               .build();
         }
       }

@@ -15,8 +15,6 @@ import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-import io.grpc.stub.StreamObserver;
-
 /**
  */
 @javax.annotation.Generated(
@@ -109,12 +107,6 @@ public final class AvgHeartBeatGrpc {
                   this, METHODID_AVG_HEART_BEAT)))
           .build();
     }
-
-	public StreamObserver<GetHeartBeatRequest> getHeartBeatsAverage(
-			StreamObserver<GetHeartBeatResponse> responseObserver) {
-		// TODO Auto-generated method stub
-		return null;
-	}
   }
 
   /**
