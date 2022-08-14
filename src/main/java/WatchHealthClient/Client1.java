@@ -1,6 +1,5 @@
 package WatchHealthClient;
 
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import javax.jmdns.ServiceInfo;

@@ -1,49 +1,22 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "watchSport";
+option java_package = "HeartStatus";
 option java_outer_classname = "Service2Impl";
 
 package wearGRPC;
 
 // Interface exported by the server.
 
-//Smart Watch for sports
+service HeartStatus {
 
-service Service2 {
-
-  //Running mode
-  //RPC server stream
-  rpc running(runData) returns (stream runAnalysis) {}
-
-  //Calories burned - RPC Bidirectional
-  rpc sportMode(stream sportData) returns (stream sportAnalysis){}
-
+  //Bi-directional Streaming
+  rpc HeartStatus(stream StatusRequest) returns (stream StatusResponse);
 }
 
-//Running mode
-
-message runData {
-  string runMode = 1;
-  int32 steps = 2;
-  double time = 3;
+message StatusRequest
+{ double Beats = 1;
 }
-
-message runAnalysis {
-  int32 distance = 1;
-  int32 AvgVelocity = 2;
-}
-
-  //Calories burned - RPC Bidirectional
-message sportData {
-  string typeActvity = 1;
-  double theGoal = 2;
- double duration = 3;
-
-}
-
-message sportAnalysis {
-  int32 caloriesBurned = 1;
-    double theGoal = 2;
-
+message StatusResponse
+{ string classif = 1;
 }

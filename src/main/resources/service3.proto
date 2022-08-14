@@ -1,33 +1,25 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "smartGlasses";
+option java_package = "GetHeartBeats";
 option java_outer_classname = "Service3Impl";
 
 package wearGRPC;
 
-// Interface exported by the server.
-//Smart Glasses
 
-service Service3 {
-  //RPC Server Streaming
-  rpc playVideo(choseVideo) returns (stream playingVideo) {}
 
-  //Activate Bluetooth - RPC Unary
-  rpc actBluetooth(activation) returns (confirmActivation){}
+service GetHeartBeats {
+
+  //Running mode
+  //RPC server stream
+  rpc GetHeartBeats(BeatsServerStreamRequest) returns (stream BeatsResponse);
+  //Client Streaming
+
 }
 
-message choseVideo {
-  string playVideo = 1;
+message BeatsServerStreamRequest
+{ int32 measure = 1;
+  int32 intervalB = 2; // time in seconds
 }
-
-message playingVideo {
-  string playing = 1;
-}
-message activation {
-  string bluetoothYes = 1;
-}
-
-message confirmActivation {
-  string conected = 1;
-  }
+message BeatsResponse
+{  double BeatH = 1; }

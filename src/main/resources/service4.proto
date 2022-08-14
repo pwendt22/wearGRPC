@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "AvgHeartBeat";
+option java_outer_classname = "Service4Impl";
+
+package wearGRPC;
+
+
+
+service AvgHeartBeat {
+
+  //Client Streaming
+  rpc AvgHeartBeat(stream GetHeartBeatRequest) returns (GetHeartBeatResponse);
+
+}
+message GetHeartBeatRequest
+{ int32 numberQual = 1;
+}
+message GetHeartBeatResponse
+{ double avgHeart = 1;
+}
